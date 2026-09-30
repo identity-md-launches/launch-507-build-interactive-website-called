@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0c10" />
+    <meta name="description" content="An open window into an artificial imagination. Watch thoughts become a living, ever-changing dream world." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>AI Dream Machine — An artificial imagination</title>
+  </head>
+  <body>
+    <a href="#dream-controls" class="skip-link">Skip to dream controls</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="AI Dream Machine home">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><ellipse cx="24" cy="24" rx="21" ry="10" transform="rotate(-35 24 24)"/><ellipse cx="24" cy="24" rx="21" ry="10" transform="rotate(35 24 24)"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2" fill="currentColor" stroke="none"/></svg>
+          <span class="brand-text">AI Dream Machine<span class="brand-tagline">An experiment in artificial imagination</span></span>
+        </a>
+        <div class="header-actions"><span class="simulation-badge"><span class="status-dot"></span> Autonomous simulation</span><button class="text-button" id="about-open">How it works <span class="info-icon" aria-hidden="true">?</span></button></div>
+      </header>
+      <main>
+        <div class="intro-row"><div><span class="eyebrow">An imagination, uninterrupted</span><h1>Watch a mind <span>begin to dream.</span></h1></div><p>No destination. No two dreams alike.<br>Just a little room for the unexpected.</p></div>
+        <section class="dream-stage" id="dream-stage" aria-label="Evolving dream world">
+          <canvas id="dream-canvas" role="img" aria-label="A quiet dark dreamspace, waiting for your first thought.">Your browser cannot display the canvas. You can follow the dream in the thought stream below.</canvas>
+          <div class="stage-top"><div class="stage-id"><span class="tiny-cross" aria-hidden="true">+</span><span>Dreamspace <span class="stage-number">/ 001</span></span></div><div class="stage-actions"><button id="fullscreen-next" class="fullscreen-only text-button" disabled>Next thought</button><button id="fullscreen-pause" class="fullscreen-only text-button" hidden>Pause dream</button><button class="icon-button" id="save-frame" aria-label="Save dream image" title="Save dream image" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h4l2-3h4l2 3h4v11H4z"/><circle cx="12" cy="13" r="3"/></svg></button><button class="icon-button" id="fullscreen" aria-label="Enter fullscreen" title="Enter fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button></div></div>
+          <div class="idle-content" id="idle-content"><div class="idle-orbit" aria-hidden="true"><i></i><i></i><i></i><span>✧</span></div><span class="eyebrow">A mind at rest</span><h2>Everything begins<br>with a single thought.</h2><p>Start the machine. See what takes shape.</p></div>
+          <div class="dream-caption" id="dream-caption" hidden><span class="caption-kind" id="caption-kind">The first thought</span><p id="caption-text"></p></div>
+          <div class="stage-bottom"><span class="stage-status"><span class="status-dot" id="dream-status-dot"></span><span id="dream-status">Waiting to dream</span></span><span class="stage-coordinates" id="world-detail">A world of possibility</span><span class="session-timer" id="session-timer" role="timer" aria-label="Dream duration">00:00</span></div>
+        </section>
+        <section class="control-bar" id="dream-controls" aria-label="Dream controls" tabindex="-1">
+          <div class="transport"><button id="toggle-dream" class="primary-button"><svg id="transport-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="m6 4 10 6-10 6z"/></svg><span id="transport-label">Start dreaming</span></button><button id="next-thought" class="icon-button next-button" aria-label="Generate next thought" title="Generate next thought" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 10 7-10 7zM19 5v14"/></svg></button></div>
+          <div class="intensity-control"><div class="control-label"><label for="intensity">Dream intensity</label><output id="intensity-value" for="intensity">50%</output></div><div class="range-row"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3"/></svg><input type="range" id="intensity" min="10" max="100" value="50" step="1" aria-valuetext="50 percent"/><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3"/><path d="M10 1v2m0 14v2M1 10h2m14 0h2M4 4l2 2m8 8 2 2M4 16l2-2m8-8 2-2"/></svg></div></div>
+          <fieldset class="style-control"><legend>Dream style</legend><div class="style-options"><label class="style-option"><input type="radio" name="dream-style" value="ethereal" checked/><span class="style-swatch swatch-ethereal" aria-hidden="true"></span><span>Ethereal</span></label><label class="style-option"><input type="radio" name="dream-style" value="lucid"/><span class="style-swatch swatch-lucid" aria-hidden="true"></span><span>Lucid</span></label><label class="style-option"><input type="radio" name="dream-style" value="cosmic"/><span class="style-swatch swatch-cosmic" aria-hidden="true"></span><span>Cosmic</span></label></div></fieldset>
+          <button id="sound-toggle" class="sound-button" aria-pressed="false" aria-label="Ambient sound: Sound off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path id="sound-waves" d="m16 9 6 6m0-6-6 6"/></svg><span id="sound-label">Sound off</span></button>
+        </section>
+        <div class="below-world">
+          <section class="thought-panel" aria-labelledby="thought-heading"><div class="section-heading"><h2 id="thought-heading"><span class="section-star" aria-hidden="true">✳</span> Thought stream</h2><span class="subtle-count" id="thought-count">0 thoughts</span></div><ol id="thought-stream" class="thought-stream"><li class="stream-empty"><span class="empty-line" aria-hidden="true"></span><p>A quiet mind, for now.<span>Thoughts will appear here as the dream unfolds.</span></p></li></ol></section>
+          <section class="seed-panel" aria-labelledby="seed-heading"><div class="section-heading"><h2 id="seed-heading">A little nudge to the subconscious</h2><span class="seed-star" aria-hidden="true">↗</span></div><p>Offer a word or an idea. Let the dream make of it what it will.</p><form id="thought-form"><label for="thought-input" class="thought-input-label">Your thought</label><div class="thought-field"><input id="thought-input" name="thought" type="text" placeholder="What if the ocean could remember?" maxlength="120" autocomplete="off" aria-describedby="thought-hint" disabled/><button type="submit" id="send-thought" aria-label="Add your thought" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div><p class="field-hint" id="thought-hint">Start a dream to add your own thought.</p></form></section>
+        </div>
+      </main>
+      <footer><span><span class="footer-symbol" aria-hidden="true">◌</span> Made of thoughts. Never the same twice.</span><span>Generative by nature <span class="footer-divider">/</span> AI Dream Machine</span></footer>
+    </div>
+    <div id="announcement" class="visually-hidden" role="status" aria-live="polite"></div>
+    <dialog id="about-dialog" aria-labelledby="about-heading"><button id="about-close" class="icon-button dialog-close" aria-label="Close explanation">✕</button><span class="eyebrow">Inside the machine</span><h2 id="about-heading">Thoughts become worlds.</h2><p>This is a little experiment in artificial imagination. A local simulation dreams up a new thought every few seconds, then translates it into light, shape, and atmosphere.</p><div class="explanation-list"><p><span>01</span><strong>Words take shape.</strong> Each thought leaves a floating fragment in the world.</p><p><span>02</span><strong>Feelings color the air.</strong> Wonder, calm, and longing shift the dream’s atmosphere.</p><p><span>03</span><strong>Memories build on each other.</strong> Repeated concepts grow structures. Unexpected connections open new possibilities.</p></div><p class="dialog-note">Nothing is sent anywhere. No live AI service is connected. Your dream lives in this tab and disappears when you leave.</p><p class="dialog-note" id="motion-note">Pause any time, or change the intensity to find your pace.</p><button class="secondary-button" id="about-done">Back to the dream</button></dialog>
+    <noscript><p class="noscript">Turn on JavaScript to start the dream simulation.</p></noscript>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
